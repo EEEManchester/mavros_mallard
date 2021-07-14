@@ -74,15 +74,15 @@
                 mavlink::common::msg::COMMAND_LONG cmd{};
                 set_target(cmd);
 
-                cmd.comfirmation = 0;
-                cmd.command = command;
-                cmd.param1 = param1;
-                cmd.param2 = param2;
-                cmd.param3 = param3;
-                cmd.param4 = param4;
-                cmd.param5 = param5;
-                cmd.param6 = param6;
-                cmd.param7 = param7;
+                cmd.confirmation = 0;
+                cmd.command = req->command;
+                cmd.param1 = req->param1;
+                cmd.param2 = req->param2;
+                cmd.param3 = req->param3;
+                cmd.param4 = req->param4;
+                cmd.param5 = req->param5;
+                cmd.param6 = req->param6;
+                cmd.param7 = req->param7;
 
                 UAS_FCU(m_uas)->send_message_ignore_drop(cmd);
             }
