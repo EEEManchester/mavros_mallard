@@ -13,10 +13,10 @@
  * in the top-level LICENSE file of the mavros repository.
  * https://github.com/mavlink/mavros/tree/master/LICENSE.md
  */
-W
+
 #include <mavros/mavros_plugin.h>
 
-#include <mavros_msgs/CommandLong.h>
+#include <mavros_msgs/CommandLongMSG.h>
 
     namespace mavros
 {
@@ -37,8 +37,8 @@ W
 
                 cmd_nh.param("use_comp_id_system_control", use_comp_id_system_control, false);
 
-                command_sub = debug_nh.subscribe("send", 10, &CommandLongPlugin::command_long_cb, this);
-                command_pub = cmd_nh.advertise<mavros_msgs::CommandLong>("command", 10);
+                command_sub = cmd_nh.subscribe("send", 10, &CommandLongPlugin::command_long_cb, this);
+                command_pub = cmd_nh.advertise<mavros_msgs::CommandLongMSG>("command", 10);
             }
 
             Subscriptions get_subscriptions() override
@@ -56,7 +56,7 @@ W
             void handle_command(const mavlink::mavlink_message_t *msg,
                                 mavlink::common::msg::COMMAND_LONG &cmd_long)
             {
-                auto cl_msg = boost::make_shared<mavros_msgs::CommandLong>();
+                auto cl_msg = boost::make_shared<mavros_msgs::CommandLongMSG>();
                 cl_msg->param1 = cmd_long.param1;
                 cl_msg->param2 = cmd_long.param2;
                 cl_msg->param3 = cmd_long.param3;
@@ -69,7 +69,7 @@ W
                 command_pub.publish(cl_msg);
             }
 
-            void command_long_cb(mavros_msgs::CommandLong::Request &req)
+            void command_long_cb(mavros_msgs::CommandLongMSG::Request &req)
             {
                 mavlink::common::msg::COMMAND_LONG cmd{};
                 set_target(cmd);

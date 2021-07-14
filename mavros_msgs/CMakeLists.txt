@@ -15,7 +15,7 @@ add_message_files(
   BatteryStatus.msg
   CamIMUStamp.msg
   CommandCode.msg
-  CommandLong.msg
+  CommandLongMSG.msg
   CompanionProcessStatus.msg
   OnboardComputerStatus.msg
   DebugValue.msg
