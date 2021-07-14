@@ -22,6 +22,9 @@
 {
     namespace extra_plugins
     {
+        
+
+using utils::enum_value;
         class CommandLongPlugin : public plugin::PluginBase
         {
         public:
