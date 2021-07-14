@@ -69,7 +69,7 @@
                 command_pub.publish(cl_msg);
             }
 
-            void command_long_cb(mavros_msgs::CommandLongMSG::Request &req)
+            void command_long_cb(const mavros_msgs::CommandLongMSG::ConstPtr &req)
             {
                 mavlink::common::msg::COMMAND_LONG cmd{};
                 set_target(cmd);
