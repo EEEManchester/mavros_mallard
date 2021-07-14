@@ -12,4 +12,4 @@ float32 param4
 float32 param5
 float32 param6
 float32 param7
-uint16_t command
+uint16 command
