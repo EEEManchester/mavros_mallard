@@ -18,13 +18,12 @@
 
 #include <mavros_msgs/CommandLongMSG.h>
 
-    namespace mavros
+namespace mavros
 {
     namespace extra_plugins
     {
-        
 
-using utils::enum_value;
+        using utils::enum_value;
         class CommandLongPlugin : public plugin::PluginBase
         {
         public:

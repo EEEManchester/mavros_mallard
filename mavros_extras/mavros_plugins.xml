@@ -74,4 +74,7 @@
 	<class name="command_long" type="mavros::extra_plugins::CommandLongPlugin" base_class_type="mavros::plugin::PluginBase">
 		<description>Send command_long message.</description>
 	</class>
+	<class name="servo" type="mavros::extra_plugins::Servo" base_class_type="mavros::plugin::PluginBase">
+		<description>Send PWM signal directly to servo pins.</description>
+	</class>
 </library>
