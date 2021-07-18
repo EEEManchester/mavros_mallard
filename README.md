@@ -4,7 +4,7 @@ A custom MAVROS for MALLARD
 
 Use `wstool` utility for retrieving sources and [`catkin` tool][catkin] for build.
 
-NOTE: The source installation instructions are for the ROS Kinetic release.
+NOTE: The source installation instructions are for the ROS Melodic release.
 
 ```sh
 sudo apt-get install python-catkin-tools python-rosinstall-generator -y
@@ -19,7 +19,7 @@ wstool init src
 
 # 2. Install MAVLink
 #    we use the Kinetic reference for all ROS distros as it's not distro-specific and up to date
-rosinstall_generator --rosdistro kinetic mavlink | tee /tmp/mavros.rosinstall
+rosinstall_generator --rosdistro Melodic mavlink | tee /tmp/mavros.rosinstall
 
 # 3. Install MAVROS: get source (upstream - released)
 rosinstall_generator --upstream mavros | tee -a /tmp/mavros.rosinstall
