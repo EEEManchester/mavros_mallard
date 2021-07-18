@@ -30,6 +30,17 @@ rosinstall_generator --upstream mavros | tee -a /tmp/mavros.rosinstall
 
 # 4. Create workspace & deps
 wstool merge -t src /tmp/mavros.rosinstall
+gedit ~/catkin_ws/src/.rosinstall
+change 
+'- git:
+    local-name: mavros
+    uri: https://github.com/mavlink/mavros.git
+    version: 1.8.0'
+to
+'- git:
+    local-name: mavros_mallard
+    uri: https://github.com/EEEManchester/mavros_mallard.git
+    version: dev'
 wstool update -t src -j4
 rosdep install --from-paths src --ignore-src -y
 
