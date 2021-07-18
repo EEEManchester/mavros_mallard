@@ -21,7 +21,7 @@ def callback(joystick):
  cmd_vel_x = 1500 + (400 * cmd_vel_x)
  cmd_vel_r = 1500 + (400 * cmd_vel_r)
  com_vel.channels = [0, 0, 0, cmd_vel_r, cmd_vel_x, cmd_vel_y, 0, 0]
- print com_vel
+
  pub.publish(com_vel)
 
 def start():
