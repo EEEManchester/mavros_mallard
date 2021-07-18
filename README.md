@@ -2,7 +2,7 @@
 A custom MAVROS for MALLARD
 ### Source installation
 
-Use `wstool` utility for retrieving sources and  [`catkin` tool](https://catkin-tools.readthedocs.io/en/latest/)[catkin]for build.
+Use `wstool` utility for retrieving sources and  [`catkin` tool](https://catkin-tools.readthedocs.io/en/latest/)for build.
 
 NOTE: The source installation instructions are for the ROS Melodic release.
 
