@@ -19,7 +19,7 @@ wstool init src
 
 # 2. Install MAVLink
 #    we use the Kinetic reference for all ROS distros as it's not distro-specific and up to date
-rosinstall_generator --rosdistro Melodic mavlink | tee /tmp/mavros.rosinstall
+rosinstall_generator --rosdistro melodic mavlink | tee /tmp/mavros.rosinstall
 
 # 3. Install MAVROS: get source (upstream - released)
 rosinstall_generator --upstream mavros | tee -a /tmp/mavros.rosinstall
