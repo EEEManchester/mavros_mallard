@@ -8,7 +8,7 @@
 </node>
 
 <!-- TODO Xueliang - describe launch -->
- <node pkg="joy2thr" type="joyControl.py" name="Joy2cmd" output="screen">
+ <node pkg="joy2thr" type="joyControl.py" name="Joy2thr" output="screen">
  </node>
 
 
