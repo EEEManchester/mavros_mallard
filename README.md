@@ -18,19 +18,14 @@ cd ~/catkin_ws
 catkin init  
 wstool init src  
 ```
+
 3. Add MAVLink package discriptions
-
-we use the Melodic reference for all ROS distros as it's not distro-specific and up to date
+> We use the Melodic reference for all ROS distros as it's not distro-specific and up to date
 ```
-rosinstall_generator --rosdistro melodic mavlink | tee /tmp/mavros.rosinstall
-```
-
-5. Merge package discriptions
-```
-wstool merge -t src /tmp/mavros.rosinstall
+rosinstall_generator --rosdistro melodic mavlink | tee src/.rosinstall
 ```
 
-6. Add our custom mavros package discriptions. Open `catkin_ws/src/.rosinstall` with your desired text editor, e.g.:
+4. Add our custom mavros package discriptions. Open `catkin_ws/src/.rosinstall` with your desired text editor, e.g.:
 ```
 gedit ~/catkin_ws/src/.rosinstall
 ```
@@ -41,24 +36,21 @@ Add the following lines at the end of the file
     uri: https://github.com/EEEManchester/mavros_mallard.git  
     version: dev'  
 ```    
-7. The install both packages
+
+5. The install both packages
 ```
 wstool update -t src -j4`  
 rosdep install --from-paths src --ignore-src -y
 ```
 
-8. Install GeographicLib datasets:  
+6. Install GeographicLib datasets:  
 ```
 sudo ./src/mavros_mallard/mavros/scripts/install_geographiclib_datasets.sh
 ```
 
-9. Build   
+7. Build and source
 ```
 catkin build
-```
-
-10. Make sure that you use setup.bash or setup.zsh from workspace. Else rosrun can't find nodes from this workspace.
-```
 source devel/setup.bash
 ```
 
