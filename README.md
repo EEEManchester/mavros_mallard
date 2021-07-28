@@ -41,7 +41,7 @@ Add the following lines at the end of the file
 
 ### 5. The install both packages
 ```
-wstool update -t src -j4`  
+wstool update -t src -j4
 rosdep install --from-paths src --ignore-src -y
 ```
 
@@ -54,6 +54,12 @@ sudo ./src/mavros_mallard/mavros/scripts/install_geographiclib_datasets.sh
 ```
 catkin build
 source devel/setup.bash
+```
+
+### 8. Add source to bashrc
+Optional, if haven't done so, add source to bashrc to avoid manual source everytime
+```
+echo "source $HOME/devel/setup.bash" >> ~/.bashrc 
 ```
 
 ### Original guides
