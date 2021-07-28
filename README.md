@@ -1,7 +1,7 @@
 A custom MAVROS for MALLARD  
 
 ## Installation  
-1. Install catkin_tool and dependencies:  
+### 1. Install catkin_tool and dependencies
 ```
 sudo apt-get install python-catkin-tools python-rosinstall-generator -y
 ```  
@@ -10,7 +10,8 @@ sudo apt-get install python-catkin-tools python-rosinstall-generator -y
 > sudo apt install python3-catkin-tools python3-rosinstall-generator python3-osrf-pycommon -y
 > ```
 
-2. Create the workspace: unneeded if you already has workspace
+### 2. Create the workspace
+Not needed if you already has workspace
 
 ```
 mkdir -p ~/catkin_ws/src  
@@ -19,13 +20,14 @@ catkin init
 wstool init src  
 ```
 
-3. Add MAVLink package discriptions
-> We use the Melodic reference for all ROS distros as it's not distro-specific and up to date
+### 3. Add MAVLink package discriptions
+We use the Melodic reference for all ROS distros as it's not distro-specific and up to date
 ```
 rosinstall_generator --rosdistro melodic mavlink | tee src/.rosinstall
 ```
 
-4. Add our custom mavros package discriptions. Open `catkin_ws/src/.rosinstall` with your desired text editor, e.g.:
+### 4. Add our custom mavros package discriptions
+Open `catkin_ws/src/.rosinstall` with your desired text editor, e.g.:
 ```
 gedit ~/catkin_ws/src/.rosinstall
 ```
@@ -37,18 +39,18 @@ Add the following lines at the end of the file
     version: dev'  
 ```    
 
-5. The install both packages
+### 5. The install both packages
 ```
 wstool update -t src -j4`  
 rosdep install --from-paths src --ignore-src -y
 ```
 
-6. Install GeographicLib datasets:  
+### 6. Install GeographicLib datasets
 ```
 sudo ./src/mavros_mallard/mavros/scripts/install_geographiclib_datasets.sh
 ```
 
-7. Build and source
+### 7. Build and source
 ```
 catkin build
 source devel/setup.bash
