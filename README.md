@@ -36,7 +36,7 @@ Add the following lines at the end of the file
 - git:  
     local-name: mavros_mallard  
     uri: https://github.com/EEEManchester/mavros_mallard.git  
-    version: dev'  
+    version: dev
 ```    
 
 ### 5. The install both packages
