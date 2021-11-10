@@ -7,8 +7,11 @@
    <param name="autorepeat_rate" type="double" value="20"/>
 </node>
 
+
 <!-- TODO Xueliang - describe launch -->
- <node pkg="joy2thr" type="joyControl.py" name="Joy2thr" output="screen">
+ <node pkg="joy2thr" type="joy2cmd.py" name="Joy2cmd" output="screen">
+ </node>
+ <node pkg="joy2thr" type="cmd2mav.py" name="Cmd2mav" output="screen">
  </node>
 
 
